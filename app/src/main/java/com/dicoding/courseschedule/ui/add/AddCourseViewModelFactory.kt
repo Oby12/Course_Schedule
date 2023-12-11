@@ -10,7 +10,7 @@ class AddCourseViewModelFactory (private val repository: DataRepository?): ViewM
 
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         try {
-            return modelClass.getConstructor(DataRepository::class.java, Int::class.java)
+            return modelClass.getConstructor(DataRepository::class.java)
                 .newInstance(repository)
         } catch (e: InstantiationException) {
             throw RuntimeException("Cannot create an instance of $modelClass", e)

@@ -75,10 +75,9 @@ class ListActivity : AppCompatActivity() {
 
     private fun setFabClick() {
         //TODO 9 : Create AddCourseActivity to set new course schedule
-        findViewById<FloatingActionButton>(R.id.fab).setOnClickListener{view ->
+        findViewById<FloatingActionButton>(R.id.fab).setOnClickListener{
             startActivity(Intent(this@ListActivity, AddCourseActivity::class.java))
         }
-
     }
 
     //TODO 14 : Fixing bug : sort menu not show and course not deleted when list is swiped
@@ -140,6 +139,7 @@ class ListActivity : AppCompatActivity() {
 
         override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
             val course = (viewHolder as CourseViewHolder).getCourse()
+            viewModel.delete(course)
 
         }
     }

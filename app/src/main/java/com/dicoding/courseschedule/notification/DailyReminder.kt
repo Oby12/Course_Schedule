@@ -10,7 +10,6 @@ import android.content.Context
 import android.content.Intent
 import android.os.Build
 import androidx.core.app.NotificationCompat
-import androidx.core.app.NotificationManagerCompat
 import androidx.core.app.TaskStackBuilder
 import com.dicoding.courseschedule.R
 import com.dicoding.courseschedule.data.Course
@@ -90,9 +89,6 @@ class DailyReminder : BroadcastReceiver() {
             builder.setChannelId(NOTIFICATION_CHANNEL_ID)
             notificationManager.createNotificationChannel(channel)
         }
-//        with(NotificationManagerCompat.from(context)){
-//            notify(NOTIFICATION_ID, builder.build())
-//        }
         val notification = builder.build()
         notificationManager.notify(NOTIFICATION_ID,notification)
 

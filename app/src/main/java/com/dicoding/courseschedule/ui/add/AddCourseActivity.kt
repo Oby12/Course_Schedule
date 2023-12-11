@@ -6,7 +6,6 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import androidx.activity.viewModels
-import androidx.lifecycle.ViewModel
 import com.dicoding.courseschedule.R
 import com.dicoding.courseschedule.databinding.ActivityAddCourseBinding
 import com.dicoding.courseschedule.util.TimePickerFragment
@@ -25,7 +24,6 @@ class AddCourseActivity : AppCompatActivity(), TimePickerFragment.DialogTimeList
         super.onCreate(savedInstanceState)
         binding = ActivityAddCourseBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
     }
 
     //create menu
